@@ -12,7 +12,6 @@ export async function getTokenFromCode (code: string) {
   }
 }
 
-
 export async function getUserFromToken (token: string) {
   try {
     const res = await axios.get<{ user: IUser }>(config.SKELETON_URL + '/service-auth/user-from-token', { headers: { 'Authorization': token }});
@@ -21,10 +20,6 @@ export async function getUserFromToken (token: string) {
     throw new Error("Error getting user from token.")
   }
 } 
-
-
-// const menuUrl = 'https://bento-menu-omi5.koyeb.app/menuItem/restaurant/1'
-
 
 export async function getIngredientFromInventory(token: string,restaurantId: number) {
     try {

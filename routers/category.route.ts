@@ -1,11 +1,8 @@
-import express, { Router } from 'express';
+import express from 'express';
 import { createCategoryController, getAllCategoriesController, getCategoriesByIdController,updateCategoryByIdController,deleteCategoryController, getcategoryByUsingCategoryIdController, getAllCategoryByRestaurantIdController } from '../controllers/category.controller';
 import { authMiddleware } from '../middleware/auth.middleware';
-// import { getAllMenuItemByRestaurantIdController } from '../controllers/menuItem.controller';
-
 
 const router = express.Router()
-
 
 router.get('/', getAllCategoriesController);
 router.get('/findOne/:id', getcategoryByUsingCategoryIdController);
